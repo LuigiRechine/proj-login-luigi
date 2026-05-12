@@ -1,0 +1,74 @@
+/* Container principal */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+}
+
+/* O "Card" branco do formulário */
+.login-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+.login-card h1 {
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Campos de digitação */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; 
+    outline: none;
+}
+
+.input-field:focus {
+    border-color: #007bff;
+}
+
+/* Botão de Entrar */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #0056b3;
+}
+
+/* Link para cadastro */
+.footer-link {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.footer-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
