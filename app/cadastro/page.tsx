@@ -1,15 +1,16 @@
 'use client';
 
 import Link from 'next/link';
-import { useLogin } from './hooks/useLogin';
-import './formStyle.css';
+import { useLogin } from '../hooks/useLogin';
+import '../formStyle.css';
 
-export default function Home() {
+export default function Cadastro() {
   // Puxamos as funções e variáveis do nosso Hook
   const { 
     username, setUsername, 
     password, setPassword, 
-    entrar 
+    name, setName,
+    cadastrar 
   } = useLogin();
 
   return (
@@ -18,8 +19,18 @@ export default function Home() {
         <h1>Área de Acesso</h1>
         
         {/* Quando o formulário for submetido, chama a função entrar */}
-        <form onSubmit={entrar}>
-          
+        <form onSubmit={cadastrar}>
+          <div className="input-group">
+            <input
+              type="text"
+              placeholder="Digite seu Nome Completo"
+              value={name}
+              onChange={(e) => setName(e.target.value)} // Atualiza apenas o username
+              className="input-field"
+              required
+            />
+          </div>
+
           <div className="input-group">
             <input
               type="text"
@@ -43,13 +54,13 @@ export default function Home() {
           </div>
 
           <button type="submit" className="btn-login">
-            Entrar no Sistema
+            Cadastrar
           </button>
         </form>
 
         <div className="footer-link">
-          <span>Ainda não tem conta? </span>
-          <Link href="/cadastro">Cadastre-se aqui</Link>
+          <span>Já tem uma conta </span>
+          <Link href="/">Acesse aqui</Link>
         </div>
       </div>
     </div>
