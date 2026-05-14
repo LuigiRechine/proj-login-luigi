@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie"; // Importamos a biblioteca
-
+import Navbar from "../components/navBar";
 
 export default function Dashboard() {
     const router = useRouter();
@@ -21,20 +21,13 @@ export default function Dashboard() {
     }, [router]);
 
 
-    function logout() {
-        Cookies.remove("logged");
-        Cookies.remove("userName");
-        router.push("/");
-    }
+    
 
 
     return (
         <div>
-            <h1>Seja bem-vindo, {nome || "Visitante"}!</h1>
+            <Navbar></Navbar>
             <p>Esta é uma área protegida</p>
-
-
-            <button onClick={logout}> Sair do Sistema </button>
         </div>
     );
 }

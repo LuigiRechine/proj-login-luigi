@@ -72,3 +72,54 @@
     text-decoration: none;
     font-weight: bold;
 }
+
+.navBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    padding: 10px;
+}
+
+.rotas{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rotas a{
+    padding: 10px;
+    background-color: #322b81;
+    text-decoration: none;
+    color: inherit;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+.navBar p{
+    padding: 10px;
+    
+    text-decoration: none;
+    color: inherit;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+.btn-sair p{
+    padding: 10px;
+    background-color: #dc0b0b;
+    text-decoration: none;
+    color: inherit;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+.btn-sair{
+    cursor: pointer;
+}
