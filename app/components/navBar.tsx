@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import "../formStyle.css";
 import Cookies from "js-cookie"; // Importamos a biblioteca
