@@ -1,39 +1,28 @@
 'use client';
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Cookies from "js-cookie"; // Importamos a biblioteca
+import Cookies from "js-cookie";
 import { useProdutos } from "../hooks/useProduto";
 import NavBar from "../components/navBar";
 
 export default function Dashboard() {
     const router = useRouter();
     const [name, setName] = useState("");
-    const {
-            produtos, loading, listarProdutos, salvar, excluir, prepararEdicao,
-            nome, setNome, descricao, setDescricao, preco, setPreco, url, setUrl,
-            editandoId, limparFormulario
-        } = useProdutos();
-    
-        useEffect(() => {
-            listarProdutos();
-        }, [listarProdutos]);
+    const { produtos, loading, listarProdutos, excluir } = useProdutos();
+
+    useEffect(() => {
+        listarProdutos();
+    }, [listarProdutos]);
 
     useEffect(() => {
         const userName = Cookies.get("userName");
-        
+
         if (userName) {
-            setNome(userName);
+            setName(userName);
         } else {
-            // Caso o cookie suma por algum motivo, volta para o login
             router.push("/");
         }
     }, [router]);
-
-    function logout() {
-        Cookies.remove("logged");
-        Cookies.remove("userName");
-        router.push("/");
-    }
 
     return (
         <div>
@@ -55,11 +44,13 @@ export default function Dashboard() {
                                     <td style={{ padding: '10px' }}>{p.nome}</td>
                                     <td style={{ padding: '10px' }}>R$ {(Number(p.preco) || 0).toFixed(2)}</td>
                                     <td style={{ padding: '10px', textAlign: 'center' }}>
-                                        <button onClick={() => prepararEdicao(p)} 
+
+                        <button onClick={() => router.push(`/dashboard/produto/${p.id}`)}
                                                 style={{ marginRight: '10px', color: '#007bff', background: 'none', border: 'none', cursor: 'pointer' }}>
                                             Editar
                                         </button>
-                                        <button onClick={() => excluir(p.id!)} 
+
+                                        <button onClick={() => excluir(p.id!)}
                                                 style={{ color: 'red', background: 'none', border: 'none', cursor: 'pointer' }}>
                                             Excluir
                                         </button>
