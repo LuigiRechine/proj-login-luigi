@@ -2,17 +2,17 @@
 
 import { useParams } from 'next/navigation';
 import NavBar from '@/app/components/navBar';
-import ProdutosForm from '@/app/components/ProdutosForm';
-import '@/app/formStyle.css';
+import '../../../formStyle.css';
+import EstoqueForm from '@/app/components/EstoqueForm';
 
-export default function EditarProdutoPage() {
+export default function EditarEstoquePage() {
     const params = useParams();
     const id = Number(params.id);
 
     return (
         <>
             <NavBar />
-            <ProdutosForm produtoId={id} />
+            <EstoqueForm estoqueId={id} />
         </>
     );
 }

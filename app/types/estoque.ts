@@ -2,7 +2,7 @@ export interface Estoque {
     id?: number;
     localizacao: string;
     quantidade: number;
-    produto?: {
+    produtos?: {
         id: number;
     };
 }

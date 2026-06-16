@@ -31,7 +31,7 @@ export default function Navbar(){
             <p>Bem-vindo {nome}</p>
             <div className="rotas">
                 <a href="/dashboard">Dashboard</a>
-                <a href="/dashboard/produto">Produto</a>
+                <a href="/dashboard/produtos">Produto</a>
                 <a href="/dashboard/estoque">Estoque</a>
             </div>
             <div className="btn-sair">
