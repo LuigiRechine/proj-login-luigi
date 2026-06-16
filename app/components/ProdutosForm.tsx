@@ -1,4 +1,3 @@
-import "../formStyle.css"
 import { useProdutos } from "../hooks/useProduto";
 import { useEffect } from "react";
 
@@ -13,6 +12,7 @@ export default function ProdutosForm({ produtoId }: { produtoId?: number }) {
         if (produtoId) {
             buscarProdutoPorId(produtoId);
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [produtoId]);
 
     return (
@@ -43,7 +43,7 @@ export default function ProdutosForm({ produtoId }: { produtoId?: number }) {
                     </button>
                     {editandoId && (
                         <button type="button" onClick={limparFormulario}
-                                className="cancel">
+                                style={{ background: 'none', border: 'none', color: 'gray', marginTop: '10px', cursor: 'pointer' }}>
                             Cancelar Edição
                         </button>
                     )}

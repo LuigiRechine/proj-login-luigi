@@ -3,7 +3,7 @@
 import { useParams } from 'next/navigation';
 import NavBar from '@/app/components/navBar';
 import '../../../formStyle.css';
-import EstoqueForm from '@/app/components/EstoqueForm';
+import FormEstoque from '@/app/components/formEstoque';
 
 export default function EditarEstoquePage() {
     const params = useParams();
@@ -11,8 +11,8 @@ export default function EditarEstoquePage() {
 
     return (
         <>
-            <NavBar />
-            <EstoqueForm estoqueId={id} />
+          
+            <FormEstoque estoqueId={id} />
         </>
     );
 }

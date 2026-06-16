@@ -8,6 +8,7 @@ export default function ProdutosPage() {
     return (
         <>
             <NavBar />
+            {/* Como não passamos o produtoId, o form entende que é uma criação limpa */}
             <ProdutosForm />
         </>
     );

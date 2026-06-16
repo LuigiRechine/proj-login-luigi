@@ -3,7 +3,7 @@
 import { useParams } from 'next/navigation';
 import NavBar from '@/app/components/navBar';
 import ProdutosForm from '@/app/components/ProdutosForm';
-import '../../../formStyle.css';
+import '@/app/formStyle.css';
 
 export default function EditarProdutoPage() {
     const params = useParams();
